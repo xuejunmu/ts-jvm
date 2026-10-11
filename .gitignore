@@ -1,0 +1,10 @@
+node_modules/
+dist/
+tests/out/
+*.class
+*.jar
+!tests/*.jar
+build/
+out.txt
+*.log
+.DS_Store

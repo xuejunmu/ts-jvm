@@ -1,0 +1,26 @@
+{
+  "name": "ts-jvm",
+  "version": "0.1.0",
+  "description": "A tiny JVM written in TypeScript - parses real .class files and interprets bytecode",
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --platform=node --format=esm --outfile=dist/jvm.js",
+    "compile": "javac -source 8 -target 8 -Xlint:-options tests/*.java -d tests/out",
+    "run": "npm run compile && npm run build && node dist/jvm.js",
+    "hello": "npm run compile && npm run build && node dist/jvm.js HelloWorld",
+    "calc": "npm run compile && npm run build && node dist/jvm.js Calc",
+    "fact": "npm run compile && npm run build && node dist/jvm.js Factorial",
+    "dog": "npm run compile && npm run build && node dist/jvm.js Dog",
+    "add": "npm run compile && npm run build && node dist/jvm.js Add",
+    "puppy": "npm run compile && npm run build && node dist/jvm.js Puppy",
+    "arr": "npm run compile && npm run build && node dist/jvm.js ArrayTest"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.6.0"
+  },
+  "dependencies": {
+    "koffi": "^3.3.3"
+  }
+}
